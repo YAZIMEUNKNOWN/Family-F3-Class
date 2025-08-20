@@ -3,14 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Kelas XII IPA 3</title>
+  <title>Portofolio Kelas XI F3</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Tambahan khusus struktur */
+    .struktur {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 180px;
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-instagram {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background: #833AB4;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-instagram:hover {
+      background: #E1306C;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      cursor: zoom-out;
+    }
+    .gallery img {
+      cursor: pointer;
+      border-radius: 12px;
+      margin: 0.5rem;
+      transition: 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-container">
-      <h2 class="logo">XII IPA 3</h2>
+      <h2 class="logo">Class XI F3</h2>
       <ul class="nav-links">
         <li><a href="#hero">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
@@ -21,75 +98,142 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="hero">
     <div class="hero-content">
-      <h1>Portofolio Kelas XII IPA 3</h1>
+      <h1>Portofolio Kelas XI F3</h1>
       <p>"Bersama, Berprestasi, dan Berarti"</p>
       <a href="#about" class="btn">Jelajahi</a>
     </div>
   </section>
 
-  <!-- Tentang -->
-  <section id="about">
-    <div class="container">
-      <h2>Tentang Kami</h2>
-      <p>
-        Kami adalah kelas XII IPA 3 SMA Harapan Bangsa. Dengan penuh semangat belajar, kreativitas, 
-        dan kekompakan, kami terus berusaha menjadi generasi yang berprestasi di bidang akademik, 
-        olahraga, maupun seni.
-      </p>
-    </div>
-  </section>
+<!-- Tentang -->
+<section id="about" class="fade-section">
+  <div class="container" style="text-align:center; max-width:800px; margin:auto;">
+    <h2>Tentang Kami</h2>
+    <p style="line-height:1.8; font-size:1.1rem;">
+      Kami adalah kelas XI F3 SMA Harapan Bangsa. Dengan penuh semangat belajar, kreativitas, 
+      dan kekompakan, kami terus berusaha menjadi generasi yang berprestasi di bidang akademik, 
+      olahraga, maupun seni.
+    </p>
+    <p><b>Jumlah Siswa:</b> 31 orang</p>
+  </div>
+</section>
 
-  <!-- Anggota -->
-  <section id="anggota">
+  <!-- Struktur Anggota -->
+  <section id="anggota" class="fade-section">
     <div class="container">
-      <h2>Anggota Kelas</h2>
-      <div class="grid">
+      <h2>Struktur Kelas</h2>
+      <div class="struktur">
+        <!-- Wali Kelas -->
         <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Ketua">
-          <h3>Nama Ketua</h3>
-          <p>Ketua Kelas</p>
+          <img src="https://files.catbox.moe/wpfj04.jpg" alt="Wali Kelas">
+          <h3>Bapak Wahyudi S.Pd</h3>
+          <p>Wali Kelas</p>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Wakil">
-          <h3>Nama Wakil</h3>
-          <p>Wakil Ketua</p>
+
+        <!-- Ketua & Wakil -->
+        <div class="row">
+          <div class="card">
+            <img src="https://files.catbox.moe/iu8wba.webp" alt="Ketua Kelas">
+            <h3>Delon Marvinda</h3>
+            <p>Ketua Kelas</p>
+          </div>
+          <div class="card">
+            <img src="https://files.catbox.moe/w69zai.jpg" alt="Wakil Ketua">
+            <h3>Latifah Aprilia</h3>
+            <p>Wakil Ketua</p>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Sekretaris">
-          <h3>Nama Sekretaris</h3>
-          <p>Sekretaris</p>
+
+        <!-- Sekretaris & Bendahara -->
+        <div class="row">
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Sekretaris">
+            <h3>Tara Nafisa</h3>
+            <p>Sekretaris</p>
+          </div>
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Bendahara 1">
+            <h3>Stefanya Queenzha</h3>
+            <p>Bendahara 1</p>
+          </div>
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Bendahara 2">
+            <h3>Siti Fadila</h3>
+            <p>Bendahara 2</p>
+          </div>
         </div>
-        <!-- Tambahkan kartu siswa lainnya -->
       </div>
     </div>
   </section>
 
-  <!-- Galeri -->
-  <section id="galeri">
-    <div class="container">
-      <h2>Galeri Kegiatan</h2>
-      <div class="grid gallery">
-        <img src="https://via.placeholder.com/300x200" alt="Kegiatan">
-        <img src="https://via.placeholder.com/300x200" alt="Kegiatan">
-        <img src="https://via.placeholder.com/300x200" alt="Kegiatan">
-      </div>
+<!-- Galeri -->
+<section id="galeri" class="fade-section">
+  <div class="container">
+    <h2>Galeri Kegiatan</h2>
+    <div class="grid gallery">
+      <img src="https://files.catbox.moe/ll22un.jpg" alt="Kegiatan 1">
+      <img src="https://files.catbox.moe/x2jjuz.jpg" alt="Kegiatan 2">
+      <img src="https://files.catbox.moe/ooqcy5.jpg" alt="Kegiatan 3">
+      <img src="https://files.catbox.moe/cxfrea.jpg" alt="Kegiatan 4">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Kontak -->
-  <section id="kontak">
-    <div class="container">
-      <h2>Kontak</h2>
-      <p>Hubungi kami melalui email: <b>kelasxiiipa3@smaharapan.id</b></p>
-    </div>
-  </section>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <img src="" alt="Foto Galeri">
+</div>
+
+<script>
+// Lightbox Galeri
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+</script>
+
+<!-- Kontak -->
+<section id="kontak" class="fade-section">
+  <div class="container" style="text-align:center;">
+    <h2>Kontak</h2>
+    <p>Hubungi <b></b></p>
+    <p> Instagram Kami</p>
+    <a href="https://www.instagram.com/_sebelasf3?igsh=MWxsbWR5eXFjbGRsNg==" target="_blank" class="btn-instagram">Instagram</a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Kelas XII IPA 3 | Dibuat dengan ❤️ oleh Kami</p>
+    <p>&copy; 2025 Kelas XI F3 | SMAN2 PULAU PUNJUNG</p>
   </footer>
+
+  <!-- Audio (langsung autoplay & loop) -->
+  <audio src="https://files.catbox.moe/vxk7hl.mp3" autoplay loop></audio>
+
+  <script>
+    // Animasi fade-in
+    const sections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(sec => observer.observe(sec));
+  </script>
 </body>
 </html>
