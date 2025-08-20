@@ -53,34 +53,6 @@
     .btn-instagram:hover {
       background: #E1306C;
     }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-      cursor: zoom-out;
-    }
-    .gallery img {
-      cursor: pointer;
-      border-radius: 12px;
-      margin: 0.5rem;
-      transition: 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
@@ -101,9 +73,11 @@
   <!-- Hero -->
   <section id="hero">
     <div class="hero-content">
-      <h1>Portofolio Kelas XI F3</h1>
+      <h1>Selamat Datang</h1>
+      <h1>Di Kelas Kelas XI F3</h1>
       <p>"Bersama, Berprestasi, dan Berarti"</p>
-      <a href="#about" class="btn">Jelajahi</a>
+      <!-- Tombol jelajahi dengan ID -->
+      <a href="#about" class="btn" id="btn-jelajahi">Jelajahi</a>
     </div>
   </section>
 
@@ -135,7 +109,7 @@
         <!-- Ketua & Wakil -->
         <div class="row">
           <div class="card">
-            <img src="https://files.catbox.moe/iu8wba.webp" alt="Ketua Kelas">
+            <img src="https://files.catbox.moe/0q8b3v.jpg" alt="Ketua Kelas">
             <h3>Delon Marvinda</h3>
             <p>Ketua Kelas</p>
           </div>
@@ -149,17 +123,17 @@
         <!-- Sekretaris & Bendahara -->
         <div class="row">
           <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Sekretaris">
+            <img src="https://files.catbox.moe/pbtg7e.jpg" alt="Sekretaris">
             <h3>Tara Nafisa</h3>
             <p>Sekretaris</p>
           </div>
           <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Bendahara 1">
+            <img src="https://files.catbox.moe/nz9fy3.jpg" alt="Bendahara 1">
             <h3>Stefanya Queenzha</h3>
             <p>Bendahara 1</p>
           </div>
           <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Bendahara 2">
+            <img src="https://files.catbox.moe/f5fpg5.jpg" alt="Bendahara 2">
             <h3>Siti Fadila</h3>
             <p>Bendahara 2</p>
           </div>
@@ -171,7 +145,7 @@
 <!-- Galeri -->
 <section id="galeri" class="fade-section">
   <div class="container">
-    <h2>Galeri Kegiatan</h2>
+    <h2>IX F3 Family</h2>
     <div class="grid gallery">
       <img src="https://files.catbox.moe/ll22un.jpg" alt="Kegiatan 1">
       <img src="https://files.catbox.moe/x2jjuz.jpg" alt="Kegiatan 2">
@@ -185,6 +159,36 @@
 <div id="lightbox" class="lightbox">
   <img src="" alt="Foto Galeri">
 </div>
+
+<style>
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  cursor: zoom-out;
+}
+.gallery img {
+  cursor: pointer;
+  border-radius: 12px;
+  margin: 0.5rem;
+  transition: 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+</style>
 
 <script>
 // Lightbox Galeri
@@ -219,8 +223,8 @@ lightbox.addEventListener('click', () => {
     <p>&copy; 2025 Kelas XI F3 | SMAN2 PULAU PUNJUNG</p>
   </footer>
 
-  <!-- Audio (langsung autoplay & loop) -->
-  <audio src="https://files.catbox.moe/vxk7hl.mp3" autoplay loop></audio>
+  <!-- Audio (lagu otomatis) -->
+  <audio id="lagu" src="https://files.catbox.moe/vxk7hl.mp3" autoplay></audio>
 
   <script>
     // Animasi fade-in
@@ -234,6 +238,15 @@ lightbox.addEventListener('click', () => {
     }, { threshold: 0.2 });
 
     sections.forEach(sec => observer.observe(sec));
+
+    // Tombol jelajahi smooth scroll
+    document.getElementById("btn-jelajahi").addEventListener("click", function(e){
+      e.preventDefault();
+      document.querySelector("#about").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
   </script>
 </body>
 </html>
