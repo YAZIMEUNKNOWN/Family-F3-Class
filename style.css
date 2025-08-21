@@ -92,3 +92,35 @@ section h2 { text-align:center; margin-bottom:30px; color:#0077b6; text-shadow:0
 
 /* Footer */
 footer { background:#0077b6; color:#fff; text-align:center; padding:20px; border-top-left-radius:20px; border-top-right-radius:20px; margin-top:40px; text-shadow:0 0 8px #00bfff; }
+.button-wrapper {
+  text-align: center;
+}
+
+/* Button Keren Bawah Struktur */
+.big-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #00b4d8, #0077b6, #833ab4, #e1306c);
+  background-size: 300% 300%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3), 0 0 25px #00bfff;
+  transition: all 0.4s ease;
+  animation: gradientShift 6s ease infinite;
+}
+.big-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px #00eaff, 0 0 50px #e1306c;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
